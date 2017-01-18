@@ -33,6 +33,8 @@ class Cell:
     def increase_counter(self):
          self.__counter += 1
 
-
     def get_counter(self):
         return self.__counter
+
+    def print(self):
+        pass
