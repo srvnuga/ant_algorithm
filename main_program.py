@@ -5,5 +5,5 @@ from entities.cell import Cell
 ant = Ant()
 
 # testing creating of Cell object
-cell = Cell()
+cell = Cell(k)
 cell.set_feromon(123)
