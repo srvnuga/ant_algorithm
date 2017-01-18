@@ -37,4 +37,5 @@ class Cell:
         return self.__counter
 
     def print(self):
+
         pass
