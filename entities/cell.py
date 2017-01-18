@@ -23,4 +23,7 @@ class Cell:
     def get_feromon(self):
         return self.__feromone
 
-    # todo add method for calculating and getting value of counter
+        # todo add method for calculating and getting value of counter
+
+    def print(self):
+        pass
