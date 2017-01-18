@@ -5,6 +5,7 @@ class Cell:
     # todo add counter
 
     def __init__(self, feromone, state=0):
+        # todo add validations of input(waiting only type Int, Double)
         self.__feromone = feromone
         self.__state = state
 
