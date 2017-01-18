@@ -2,6 +2,7 @@ class Cell:
     __state = None  # Cell can be in 4 states currently: 0 - normal, 1 - start, 2 - finish, 3 - permitted
     __feromone = None
     __counter = None
+    #todo add id and method get id
 
     def __init__(self, feromone, state=0):
         if not isinstance(feromone, float):
@@ -37,5 +38,4 @@ class Cell:
         return self.__counter
 
     def print(self):
-
         pass
