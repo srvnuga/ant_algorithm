@@ -21,6 +21,15 @@ class Cell:
             raise TypeError("input state is not %s type must be 0,1,2,3" % (int))
         self.__state = state
 
+    def get_state_as_string(self):
+        if self.is_normal():
+            return 'o'
+        if self.is_permitted():
+            return 'x'
+        if self.is_start():
+            return 's'
+        if self.is_finish():
+            return 'f'
 
     def is_normal(self):
         return self.__state == 0
@@ -31,7 +40,7 @@ class Cell:
     def is_finish(self):
         return self.__state == 2
 
-    def is_permitted(self):
+    def is_permitted(self): #запрещенная
         return self.__state == 3
 
     def set_feromon(self, feromone):
@@ -47,4 +56,4 @@ class Cell:
         return self.__counter
 
     def print(self):
-        print(self.__counter, self.__feromone, self.__state)
+        print("id=" + str(self.get_id())+" counter= "+str(self.get_counter())+ " feromone= "+str(self.get_feromon()) + " state= "+str(self.__state))
