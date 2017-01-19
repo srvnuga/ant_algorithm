@@ -2,7 +2,6 @@ import math
 
 from entities.mapping.mapping import Mapping
 
-
 class CellsGroup:
     __cell_coords = None
 
@@ -13,16 +12,19 @@ class CellsGroup:
         for mapp in self.__cell_coords:
             if mapp.get_id() == id:
                 return mapp.get_x()
+        return None
 
     def get_y_by_id(self, id):
         for mapp in self.__cell_coords:
             if mapp.get_id() == id:
                 return mapp.get_y()
+        return None
 
     def get_id_by_xy(self, x, y):
         for mapp in self.__cell_coords:
             if mapp.get_x() == x and mapp.get_y() == y:
                 return mapp.get_id()
+        return None
 
     def create_mapping(self, list_ids):
         if not isinstance(list_ids, list):
