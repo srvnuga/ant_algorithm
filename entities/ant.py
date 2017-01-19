@@ -30,3 +30,10 @@ class Ant:
     def move(self, new_cell):
         self.__old_cell = self.__current_cell
         self.__current_cell = new_cell
+
+    def get_current_cell(self):
+
+    def get_old_cell(self):
+
+
+
