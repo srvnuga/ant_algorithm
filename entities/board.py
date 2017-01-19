@@ -1,10 +1,21 @@
+from entities.cells_group import CellsGroup
+
+
 class Board:
-    __cells = None  # 2 dimension list of cells
+    __cells = None  # list of cells
+    __cells_coords = None  # 2 dimension map to connect Id of cells With X,Y coords
 
     def __init__(self, size):
         # todo init board with list of cells. length of list must be equal to size
         # id of cell must be different!
+        self.cells_coords = CellsGroup()
         self.randomize_cells()
+        self.refresh_mapping(self.__cells)
+
+    def refresh_mapping(self, list_cells):
+        if isinstance(list_cells, list):
+            raise TypeError("list_cells is not a list!")
+        self.cells_coords.create_mapping(list_cells)
 
     def randomize_cells(self):
         list = []
