@@ -12,7 +12,7 @@ class Board:
         self.cells_coords = CellsGroup()
         self.create_board(size)
         self.randomize_cells()
-        # self.refresh_mapping(self.__cells)
+        self.refresh_mapping(self.__cells)
 
     def create_board(self, size):
         self.__cells = []

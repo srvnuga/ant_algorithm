@@ -8,7 +8,7 @@ class Controller:
     __iter_counter = None
 
     def __init__(self, sizeOfBoard):
-        ant = Ant.__init__()
+        self.__ant = Ant()
         self.__iter_counter = 0
         self.__board = Board(sizeOfBoard)
 
@@ -17,6 +17,9 @@ class Controller:
         # ant must be on start cell
         # it's required to use method process() until number of iteration < max_number_of_iteration
         pass
+
+    def init_iteration(self):
+       pass
 
     def process(self):
         # todo logic for ONE iteration must be added here:

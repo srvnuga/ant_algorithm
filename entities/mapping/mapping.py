@@ -5,7 +5,8 @@ class Mapping:
 
     def __init__(self, cell_id, x, y):
         if not isinstance(cell_id, int) or not isinstance(x, int) or not isinstance(y, int):
-            raise TypeError("input id, x, y must be Int")
+            pass
+            #raise TypeError("input id, x, y must be Int")
         self.__id = cell_id
         self.__x = x
         self.__y = y

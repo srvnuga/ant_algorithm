@@ -31,15 +31,15 @@ class CellsGroup:
             raise TypeError("list_ids is not a list")
         # get sqrt(length)
         sq_len = math.sqrt(len(list_ids))
-        if sq_len - int(sq_len) is not 0:
+        if sq_len - int(sq_len) != 0.0:
             raise AttributeError("list_ids has a length which is not a full square")
         # empty cell-coords-mapping
         self.__cell_coords = []
-
+        sq_len = int(sq_len)
         for x in range(0, sq_len):
             for y in range(0, sq_len):
                 mapping = Mapping(list_ids[sq_len * x + y], x, y)
-                self.__cell_coords.add(mapping)
+                self.__cell_coords.append(mapping)
 
     def get_available_ids_by_id(self, current_id):
         current_x = self.get_x_by_id(current_id)
