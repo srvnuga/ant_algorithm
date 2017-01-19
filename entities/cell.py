@@ -7,17 +7,20 @@ class Cell:
     def __init__(self, cell_id, feromone, state=0):
         if not isinstance(feromone, float):
             raise TypeError("input feromone is not %s type" % (float))
-        if not isinstance(state, int) and (-1 < state < 4):
-            raise TypeError("input state is not %s type must be 0,1,2,3" % (int))
         self.__cell_id = cell_id
         self.__counter = 0
         self.__feromone = feromone
-        self.__state = state
+        self.set_cell_state(state)
 
     def get_id(self):
         return self.__cell_id
 
-    # todo add method set state to set state
+
+    def set_cell_state(self, state):
+        if not isinstance(state, int) and (-1 < state < 4):
+            raise TypeError("input state is not %s type must be 0,1,2,3" % (int))
+        self.__state = state
+
 
     def is_normal(self):
         return self.__state == 0

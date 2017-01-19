@@ -8,7 +8,6 @@ class Ant:
         pass
 
     def get_selected_cell_id(self, available_cells):  # available_cells - list of cells
-        # todo add logic for finding cell with maximum feromon
         if not isinstance(available_cells, list):
             raise TypeError("input available_cells is not %s type" % (list))
         max_feromon = 0.0
