@@ -3,7 +3,6 @@ class Cell:
     __feromone = None
     __counter = None
     __cell_id = None
-    #todo add id and method get id
 
     def __init__(self, cell_id, feromone, state=0):
         if not isinstance(feromone, float):
@@ -17,6 +16,8 @@ class Cell:
 
     def get_id(self):
         return self.__cell_id
+
+    # todo add method set state to set state
 
     def is_normal(self):
         return self.__state == 0

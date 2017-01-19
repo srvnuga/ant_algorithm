@@ -28,10 +28,20 @@ class Board:
                 pass
 
     def set_start_cell(self):
+        # todo add logic to make start cell
+        # start cell is the FIRST cell in the list of cell
+        # BEFORE need to add method set state in Cell
         pass
 
     def set_finish_cell(self):
+        # todo add logic to make finish cell
+        # finish cell is the LAST cell in the list of cell
+        # BEFORE need to add method set state in Cell
         pass
+
+    def get_start_cell(self):
+        # todo add logic to find and return start cell
+        return None
 
     def get_cell_by_id(self, cell_id):
         # todo  add logic for finding cell by cell_id and return it
