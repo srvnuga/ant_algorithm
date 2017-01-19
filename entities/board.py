@@ -75,8 +75,12 @@ class Board:
         return result_list
 
     def print(self):
+        print("Cells: ")
         for cell in self.__cells:
             cell.print()
+        self.print_counter()
+        self.print_states()
+        self.print_feromon()
 
     def print_states(self):
         print("Current states of cells:")
