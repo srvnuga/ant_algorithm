@@ -2,16 +2,21 @@ class Cell:
     __state = None  # Cell can be in 4 states currently: 0 - normal, 1 - start, 2 - finish, 3 - permitted
     __feromone = None
     __counter = None
+    __cell_id = None
     #todo add id and method get id
 
-    def __init__(self, feromone, state=0):
+    def __init__(self, cell_id, feromone, state=0):
         if not isinstance(feromone, float):
             raise TypeError("input feromone is not %s type" % (float))
         if not isinstance(state, int) and (-1 < state < 4):
             raise TypeError("input state is not %s type must be 0,1,2,3" % (int))
+        self.__cell_id = cell_id
         self.__counter = 0
         self.__feromone = feromone
         self.__state = state
+
+    def get_id(self):
+        return self.__cell_id
 
     def is_normal(self):
         return self.__state == 0
@@ -32,10 +37,10 @@ class Cell:
         return self.__feromone
 
     def increase_counter(self):
-         self.__counter += 1
+        self.__counter += 1
 
     def get_counter(self):
         return self.__counter
 
     def print(self):
-        pass
+        print(self.__counter, self.__feromone, self.__state)
