@@ -43,6 +43,12 @@ class Board:
     def __create_permitted_cell(self):
         random_id = random.randrange(1, len(self.__cells) - 2, 1)
         self.__cells[random_id].set_cell_state(3)
+        random_id = random.randrange(1, len(self.__cells) - 2, 1)
+        self.__cells[random_id].set_cell_state(3)
+        random_id = random.randrange(1, len(self.__cells) - 2, 1)
+        self.__cells[random_id].set_cell_state(3)
+        random_id = random.randrange(1, len(self.__cells) - 2, 1)
+        self.__cells[random_id].set_cell_state(3)
 
     def set_start_cell(self):
         if self.__cells is None or len(self.__cells) == 0:  # if list is None or Empty - return without any logic
@@ -105,8 +111,6 @@ class Board:
 
     def print(self):
         print("Cells: ")
-        for cell in self.__cells:
-            cell.print()
         self.print_counter()
         self.print_states()
         self.print_feromon()

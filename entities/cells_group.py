@@ -2,6 +2,7 @@ import math
 
 from entities.mapping.mapping import Mapping
 
+
 class CellsGroup:
     __cell_coords = None
 
@@ -48,7 +49,8 @@ class CellsGroup:
 
         up_cell_id = self.get_id_by_xy(current_x - 1, current_y)
         if up_cell_id is not None and up_cell_id != old_id:
-            result_ids.append(up_cell_id)
+            # result_ids.append(up_cell_id)
+            pass
 
         down_cell_id = self.get_id_by_xy(current_x + 1, current_y)
         if down_cell_id is not None and down_cell_id != old_id:
