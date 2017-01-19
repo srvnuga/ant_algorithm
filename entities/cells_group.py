@@ -38,23 +38,27 @@ class CellsGroup:
         sq_len = int(sq_len)
         for x in range(0, sq_len):
             for y in range(0, sq_len):
-                mapping = Mapping(list_ids[sq_len * x + y], x, y)
+                mapping = Mapping(list_ids[sq_len * x + y].get_id(), x, y)
                 self.__cell_coords.append(mapping)
 
     def get_available_ids_by_id(self, current_id, old_id):
         current_x = self.get_x_by_id(current_id)
         current_y = self.get_y_by_id(current_id)
         result_ids = []
+
         up_cell_id = self.get_id_by_xy(current_x - 1, current_y)
         if up_cell_id is not None and up_cell_id != old_id:
             result_ids.append(up_cell_id)
+
         down_cell_id = self.get_id_by_xy(current_x + 1, current_y)
         if down_cell_id is not None and down_cell_id != old_id:
             result_ids.append(down_cell_id)
+
         right_cell_id = self.get_id_by_xy(current_x, current_y + 1)
         if right_cell_id is not None and right_cell_id != old_id:
             result_ids.append(right_cell_id)
+
         left_cell_id = self.get_id_by_xy(current_x, current_y - 1)
         if left_cell_id is not None and left_cell_id != old_id:
-            left_cell_id.append(down_cell_id)
+            result_ids.append(left_cell_id)
         return result_ids

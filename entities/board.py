@@ -9,7 +9,7 @@ class Board:
     __cells_coords = None  # 2 dimension map to connect Id of cells With X,Y coords
 
     def __init__(self, size):
-        self.cells_coords = CellsGroup()
+        self.__cells_coords = CellsGroup()
         self.__create_board(size)
         self.randomize_cells()
         self.__refresh_mapping(self.__cells)
@@ -28,15 +28,15 @@ class Board:
     def __refresh_mapping(self, list_cells):
         if not isinstance(list_cells, list):
             raise TypeError("list_cells is not a list!")
-        self.cells_coords.create_mapping(list_cells)
+        self.__cells_coords.create_mapping(list_cells)
 
     def randomize_cells(self):
         if self.__cells is None or len(self.__cells) == 0:  # if list is None or Empty - return without any logic
             return
         else:
             for cell in self.__cells:
-                c = random.randrange(1, 10, 1)
-                b = random.randrange(1, 10, 1)
+                c = random.randrange(0, 10, 1)
+                b = random.randrange(0, 10, 1)
                 feromon = c + b * 0.1
                 cell.set_feromon(feromon)
 
@@ -67,7 +67,7 @@ class Board:
         if self.__cells is None or len(self.__cells) == 0:  # if list is None or Empty - return without any logic
             return
         for cell in self.__cells:
-            if cell.is_start():
+            if cell.is_finish():
                 return cell.get_id()
 
     def __get_cell_by_id(self, cell_id):

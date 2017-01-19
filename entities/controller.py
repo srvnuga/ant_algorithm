@@ -14,18 +14,22 @@ class Controller:
         self.__max_iter_number = max_number_of_iteration
         self.__board = Board(sizeOfBoard * sizeOfBoard)
 
-    def start(self, max_number_of_iteration):
-        # todo add logic for start process:
-        # ant must be on start cell
-        # it's required to use method process() until number of iteration < max_number_of_iteration
-        pass
-
-    def start_iteration(self):
-        pass
-
-    def process(self):
-        current_ant_id = self.__ant.
-        pass
+    def start(self):
+        start_id = self.__board.get_start_cell_id()
+        finish_id = self.__board.get_finish_cell_id()
+        while self.__iter_counter < self.__max_iter_number:
+            self.__board.randomize_cells()
+            self.__ant.move(start_id)
+            while True:
+                current_ant_cell = self.__ant.get_current_cell()
+                if current_ant_cell == finish_id:
+                    break
+                old_ant_cell = self.__ant.get_old_cell()
+                available_cells = self.__board.get_available_cells_by_id(current_ant_cell, old_ant_cell)
+                selected_ant_cell = self.__ant.get_selected_cell(available_cells)
+                selected_ant_cell.increase_counter()
+            self.__iter_counter += 1
+            self.print()
 
     def print(self):
         print("Iteration " + str(self.__iter_counter) + " of " + str(self.__max_iter_number))

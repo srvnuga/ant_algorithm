@@ -6,8 +6,9 @@ from entities.controller import Controller
 #board = Board(16)
 #board.print()
 
-contr = Controller(5, 10)
-contr.print()
+contr = Controller(4, 5)
+contr.start()
+
 
 
 
