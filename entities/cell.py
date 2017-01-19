@@ -23,13 +23,13 @@ class Cell:
 
     def get_state_as_string(self):
         if self.is_normal():
-            return 'o'
+            return 'O'
         if self.is_permitted():
-            return 'x'
+            return 'X'
         if self.is_start():
-            return 's'
+            return 'S'
         if self.is_finish():
-            return 'f'
+            return 'F'
 
     def is_normal(self):
         return self.__state == 0

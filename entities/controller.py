@@ -6,11 +6,13 @@ class Controller:
     __board = None
     __ant = None
     __iter_counter = None
+    __max_iter_number = None
 
-    def __init__(self, sizeOfBoard):
+    def __init__(self, sizeOfBoard, max_number_of_iteration):
         self.__ant = Ant()
         self.__iter_counter = 0
-        self.__board = Board(sizeOfBoard)
+        self.__max_iter_number = max_number_of_iteration
+        self.__board = Board(sizeOfBoard * sizeOfBoard)
 
     def start(self, max_number_of_iteration):
         # todo add logic for start process:
@@ -18,17 +20,13 @@ class Controller:
         # it's required to use method process() until number of iteration < max_number_of_iteration
         pass
 
-    def init_iteration(self):
-       pass
+    def start_iteration(self):
+        pass
 
     def process(self):
-        # todo logic for ONE iteration must be added here:
-        # controller must get from board available cells and take them to ant
-        # then controller get the answer from ant(id of cell which was selected by ant)
-        # and controller send this selected id to the board
-        # in the end of process number of iteration must be +1
+        current_ant_id = self.__ant.
         pass
 
     def print(self):
-        # todo add printing to console all information about board
-        pass
+        print("Iteration " + str(self.__iter_counter) + " of " + str(self.__max_iter_number))
+        self.__board.print()
