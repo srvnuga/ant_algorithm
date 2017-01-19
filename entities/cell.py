@@ -4,7 +4,7 @@ class Cell:
     __counter = None
     __cell_id = None
 
-    def __init__(self, cell_id, feromone, state=0):
+    def __init__(self, cell_id, feromone=0.0, state=0):
         if not isinstance(feromone, float):
             raise TypeError("input feromone is not %s type" % (float))
         self.__cell_id = cell_id
