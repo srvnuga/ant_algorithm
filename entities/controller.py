@@ -1,14 +1,15 @@
+from entities.ant import Ant
 from entities.board import Board
 
 
 class Controller:
     __board = None
     __ant = None
-    # todo add number of iteration
+    __iter_counter = None
 
     def __init__(self, sizeOfBoard):
-        # todo add init ant
-        # todo init number of iteration with zero
+        ant = Ant.__init__()
+        self.__iter_counter = 0
         self.__board = Board(sizeOfBoard)
 
     def start(self, max_number_of_iteration):
