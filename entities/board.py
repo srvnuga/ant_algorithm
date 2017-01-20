@@ -46,9 +46,9 @@ class Board:
         random_id = random.randrange(1, len(self.__cells) - 2, 1)
         self.__cells[random_id].set_cell_state(3)
         random_id = random.randrange(1, len(self.__cells) - 2, 1)
-        self.__cells[random_id].set_cell_state(3)
+        #self.__cells[random_id].set_cell_state(3)
         random_id = random.randrange(1, len(self.__cells) - 2, 1)
-        self.__cells[random_id].set_cell_state(3)
+        #self.__cells[random_id].set_cell_state(3)
 
     def set_start_cell(self):
         if self.__cells is None or len(self.__cells) == 0:  # if list is None or Empty - return without any logic
@@ -100,6 +100,8 @@ class Board:
             raise TypeError("No available ids, Sorry try again")
         available_cells = self.__get_cells_by_ids(available_ids)
         no_permitted_cells = self.__get_no_permitted_cells(available_cells)
+        if len(no_permitted_cells) == 0:
+            raise TypeError("Sorry, there're no available cells for ant")
         return no_permitted_cells
 
     def __get_no_permitted_cells(self, list_of_cells):
